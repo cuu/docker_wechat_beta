@@ -1,6 +1,8 @@
 # Run wechat-beta 
 
-Run wechat-beta in x11docker ,with fcitx input method
+Run wechat-beta in [x11docker](https://github.com/mviereck/x11docker) with fcitx input method
+
+share clipboard
 
 ## How to build
 ```
