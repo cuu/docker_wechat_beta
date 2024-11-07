@@ -25,4 +25,6 @@ to run `fcitx5-configtool` to add input methods,like pinyin,then apply it
 
 then we can use fcitx5 
 
+fcitx5 needs to be configed everytime after docker build
+
 
