@@ -9,6 +9,13 @@ share clipboard
 docker build .
 ```
 
+## Depends
+
+I use xpra,so on the host machine, try install xpra
+```
+sudo apt install -y xpra
+```
+
 ## How to run
 
 ```
