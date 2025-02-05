@@ -3,7 +3,15 @@ FROM debian:bookworm
 
 ENV XMODIFIERS=@im=fcitx QT4_IM_MODULE=fcitx QT_IM_MODULE=fcitx GTK_IM_MODULE=fcitx
 
-RUN apt-get update
+RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware" > /etc/apt/sources.list && \
+    echo "deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm main contrib non-free non-free-firmware" >> /etc/apt/sources.list && \
+	echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware" >>/etc/apt/sources.list && \
+	echo "deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-updates main contrib non-free non-free-firmware">>/etc/apt/sources.list && \ 
+	echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware">>/etc/apt/sources.list && \
+	echo "deb-src http://mirrors.tuna.tsinghua.edu.cn/debian/ bookworm-backports main contrib non-free non-free-firmware">>/etc/apt/sources.list && \
+	echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware">>/etc/apt/sources.list && \
+	echo "deb-src http://mirrors.tuna.tsinghua.edu.cn/debian-security/ bookworm-security main contrib non-free non-free-firmware">>/etc/apt/sources.list && apt-get update
+
 RUN apt-get install apt-utils
 RUN apt-get install -y fvwm xterm qterminal wget libatomic1 fcitx5 fcitx5-chinese-addons  fcitx5-frontend-* fcitx5-pinyin
 
